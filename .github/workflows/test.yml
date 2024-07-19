@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +32,7 @@ jobs:
         run: mvn clean compile
 
   codestyle:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Set up Maven
@@ -50,7 +50,7 @@ jobs:
         run: mvn checkstyle:check
 
   test-run:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs:
       - build
       - codestyle
