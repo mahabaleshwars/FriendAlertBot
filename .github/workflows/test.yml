@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: self-hosted
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +32,7 @@ jobs:
         run: mvn clean compile
 
   codestyle:
-    runs-on: self-hosted
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Maven
@@ -50,7 +50,7 @@ jobs:
         run: mvn checkstyle:check
 
   test-run:
-    runs-on: self-hosted
+    runs-on: macos-latest
     needs:
       - build
       - codestyle
