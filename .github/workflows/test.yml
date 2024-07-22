@@ -1,15 +1,12 @@
 name: Test
 
 on:
-  # pull_request:
-  #   branches:
-  #     - '*'
-  # push:
-  #   branches:
-  #     - 'master'
-  schedule:
-    # This will run every 15 minutes
-    - cron:  '*/5 * * * *'
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'master'
   workflow_dispatch:
 
 jobs:
