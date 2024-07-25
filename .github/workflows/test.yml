@@ -16,7 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
+          
       - name: Set up Maven
         uses: stCarolas/setup-maven@v5
         with:
